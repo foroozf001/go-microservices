@@ -51,6 +51,8 @@ func main() {
 	err = rpc.Register(new(RPCServer))
 	go app.rpcListen()
 
+	go app.gRPCListen()
+
 	log.Printf("logger service listening on port %s\n", listenPort)
 	// go app.serve()
 	srv := &http.Server{
